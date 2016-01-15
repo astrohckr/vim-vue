@@ -14,6 +14,11 @@ syntax include @JS syntax/javascript.vim
 unlet b:current_syntax
 syntax region script keepend start=/<script\( lang="[a-zA-Z]\+"\)\?>/ end="</script>" contains=@JS fold
 
+syntax include @COFFEE syntax/coffee.vim
+unlet b:current_syntax
+" Matchgroup seems to be necessary for coffee
+syntax region coffee keepend matchgroup=Delimiter start="<script lang=\"coffee\">" end="</script>" contains=@COFFEE fold
+
 syntax include @CSS syntax/css.vim
 unlet b:current_syntax
 syntax region style keepend start=/<style\( lang="[a-zA-Z]\+"\)\?>/ end="</style>" contains=@CSS fold
